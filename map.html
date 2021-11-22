@@ -41,9 +41,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       /* --------------------------------------------------------- */
 
 @media (min-width: 500px) {
-	::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
     display: none;
-	}
+	} */
 	.navigation {	
 	width: 500px;
 	}
@@ -53,62 +53,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .brand {
     margin-left: -240px;
     }
-    #mapwrap{
- /*    position: relative; */
-    width:500px;
-    z-index: 20;
-    }
-	#map{
-	width:500px;
-	height:350px;
-	display: flex;
-	flex-direction: column;
-	/* justify-content:flex-start; */
-	}
-	.category {
-/* 	position: absolute; */
-	z-index: 20;
-/* 	display: flex;
- 	flex-direction: column; 
-   justify-content: center;
-    align-items: center; */
-	
-	}
-/* 	.category li {
-	display: flex;
- 	align-items:flex-start; 
-   justify-content: center;
-    align-items: center;
-	float:left;   
-	}  */
-	#foodMenu{
-	display: flex;
-    justify-content: center;
-    align-items: center;
-	}
-	
-	.foodlist{
-	width:300px;
-  	display: flex;
-    justify-content: center;
-    align-items: center;
-	}
-	.food{
-	width:150px;
-	display: flex;
-    justify-content: center;
-    align-items: center;
-	}
-	.icon{
-	display: flex;
-	align-items:flex-start;
-	justify-content:flex-start;
-	}
+
 	
 }
-body{
+/* body{
 scroll:hidden;
-}
+} */
 .main{
 display: flex;
 flex-direction: column;
@@ -116,40 +66,28 @@ justify-content: center;
 align-items: center;
 
 }
-.container{
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-}
 
 #map{
+position: relative;
 width:500px;
 height:350px;
 display: flex;
 flex-direction: column;
-justify-content:flex-start;
-/* align-items:left; */
-}
-#mapwrap{
-position: relative;
-width:500px;
-/* height:350px; */
+
 }
 
 .category {
- position: absolute;
+width:500px;
+position: absolute;
 z-index: 10;
-top:10px;
-/* display: flex;
-flex-direction: column;
+top:70px;
+display:flex;
 align-items:flex-start;
-margin-left:20px;
- */
+justify-content: flex-start;
+
 }
 .category li {
 z-index: 10;
-/* align-items:flex-start; */
 float:left; 
 
 } 
@@ -162,20 +100,6 @@ border-radius: 25px 15px 10px 20px;
 margin-left:5px;
 
 } 
-
-.table ul li{
-	list-style:none;
-/* 	text-align:center; */
-	line-height: 50px;
-	font-weight: bold;
-	border-right:solid 1px #DCDCDC;
-	border-bottom:solid 1px #DCDCDC;
-	height: 40px;
-	line-height: 40px;
-	display: table-cell;
-	padding:0px;
-	margin:0px;
-}
 .foodpic{
 margin-bottom:-50px;
 padding-bottom:-50px;
@@ -189,6 +113,32 @@ padding-bottom:-50px;
 .icon{
 	display:flex;
 	align-items:flex-start;
+	justify-content: flex-start;
+/* 	text-align:center; */
+	line-height: 50px;
+	font-weight: bold;
+	border-right:solid 1px #DCDCDC;
+	border-bottom:solid 1px #DCDCDC;
+	height: 40px;
+	line-height: 40px;
+	display: table-cell; 
+	padding:0px;
+	margin:0px;
+	padding-left:20px;
+	width:480px;
+
+}
+
+a:link{
+text-decoration:none;
+font-color:#1C1C1C;
+}
+.table{
+height:350px;
+overflow:scroll;
+overflow-x:hidden;
+}
+.table ul li{
 	list-style:none;
 /* 	text-align:center; */
 	line-height: 50px;
@@ -200,14 +150,6 @@ padding-bottom:-50px;
 	display: table-cell;
 	padding:0px;
 	margin:0px;
-	padding-left:20px;
-	width:480px;
-
-}
-.table{
-height:350px;
-overflow:scroll;
-overflow-x:hidden;
 }
 
 .foodlist{
@@ -216,13 +158,20 @@ overflow-x:hidden;
 	font-color:black;
 	margin-top:-20px;
 	color:#1C1C1C;
+    justify-content: flex-start;
+    align-items: flex-start;
+	
 }
 .food{
 	background-color:#FFFFFF;
 	font-color:#CFEAF2;
 	width:180px;
 	color:#5EA4B8;
+	display:flex;
+	justify-content: center;
+    align-items: center;
 }
+
 .cafelist{
 	width:300px;
 	background-color:#FFFFFF;
@@ -232,17 +181,13 @@ overflow-x:hidden;
 	background-color:#FFFFFF;
 	width:180px;
 	font-color:#FFD7D0;
+	color:#5EA4B8;
+	display:flex;
+	justify-content: center;
+    align-items: center;
 }
-a:link{
-text-decoration:none;
-font-color:#1C1C1C;
-}
-.cafelist{
-color:#1C1C1C;
-}
-.cafe{
-color:#5EA4B8;
-}
+
+
 .info{
 	font-size:13px;
 	background-color:#ffffff;
