@@ -56,7 +56,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 body{
  font-family: 'Malgun Gothic';
-
+ overflow:hidden;
 }
  .main{	
  /*width:500px; */
@@ -89,6 +89,7 @@ body{
 	#mapwrap{
 	width:100%;
 	height:50vh;
+	box-shadow:0 5px 5px -5px #6E6E6E;
 	}
 	#map{
 	position: relative;
@@ -107,67 +108,71 @@ body{
    }
    a:link{
 	text-decoration:none;
-	font-color:#1C1C1C;
+	font-color:#04040;
+	}
+	.iconn{
+	width:500px;
+	
 	}
    .icon, .icon2{
+   width:100%;
+   dlsplay:flex;
 	line-height: 50px;
 	font-weight: bold;
 	border-right:solid 1px #DCDCDC;
 	border-bottom:solid 1px #DCDCDC;
 	height: 40px;
 	line-height: 40px;
-	display: table-cell; 
-	padding:5px 0px 5px 0px;
+	padding:10px 0px 10px 0px;
 	margin:0px;
 	padding-left:20px;
-	width:500px;
+	width:100%;
+}
+.icon{
+color:#5EA4B8;
+}
+.icon2{
+color:#EE6B56;
 }
 .foodicon{
 	margin-top:10px;
 	margin-right:5px;
 	margin-bottom:-2px;
-	margin-left:5px;
+	margin-left:4px;
 }
 .cafeicon{
 	margin-top:10px;
 	margin-right:5px;
-	margin-bottom:-6px;
-	margin-left:5px;
+ 	margin-bottom:-5px;
+	margin-left:4px;
 }
-
+.list{
+font-color:#C4C4C4;
+color:#C4C4C4;
+}
 .table{
 height:34vh;
-
 }
    .table ul li{  
 	list-style:none;
 /* 	text-align:center; */
 	line-height: 50px;
-	font-weight: bold;
 	border-bottom:solid 1px #DCDCDC;
 	height: 40px;
 	line-height: 40px;
 	display: table-cell;
-	padding:7.5px 0px 7.5px 0px;
+	padding:12px 0px 12px 0px;
 	margin:0px;
 }
 
-#foodlist{
+#foodlist,#cafelist{
 height:100%;
 overflow:hidden;
 overflow:scroll;
+overflow-x:hidden;
 }
-#cafelist{
-height:100%;
-overflow:hidden;
-overflow:scroll;
-}
-#foodlist ul{
 
-	display:flex;
-	width:100%;
-}
-#cafelist ul{
+#foodlist ul,#cafelist ul{
 
 	display:flex;
 	width:100%;
@@ -178,8 +183,9 @@ overflow:scroll;
 	justify-content: flex-start;
 	margin-left:8%;
 	background-color:#FFFFFF;
-	font-color:black;
-	color:#1C1C1C;
+	font-color:#404040;
+/* 	opacity:0.75; */
+ 	color:#404040;
 	width:70%;
 }
 .cafelist{
@@ -189,7 +195,7 @@ overflow:scroll;
 	margin-left:8%;
 	width:70%;
 	background-color:#FFFFFF;
-	color:#1C1C1C;
+	color:#404040;
 }
 .food{
 	display:flex;
@@ -200,6 +206,7 @@ overflow:scroll;
 	background-color:#FFFFFF;
 	font-color:#5EA4B8;
 	color:#5EA4B8;
+	font-weight: bold;
 
 }
 .cafe{
@@ -210,6 +217,7 @@ overflow:scroll;
 	background-color:#FFFFFF;
 	font-color:#5EA4B8;
 	color:#5EA4B8;
+	font-weight: bold;
 }
 .food2{
 	display:flex;
@@ -227,7 +235,7 @@ overflow:scroll;
 	color:#FE7762;
 }
 .info{
-	font-size:13px;
+	font-size:15px;
 	background-color:#ffffff;
 	border-radius:10px;
 	border-style:solid;
@@ -236,11 +244,11 @@ overflow:scroll;
 	font-weight:bold;
 	color:#5EA4B8;
 	opacity:0.9;
-	padding:1px 6px 3px 6px;
-	margin:15px 0px 2px 0px;
+	padding:5px 7px 4px 6.5px;
+	margin:20px 0px 2px 0px;
 }
 .info-c{
-	font-size:13px;
+	font-size:15px;
 	background-color:#ffffff;
 	border-radius: 25px;
 	border-style:solid;
@@ -248,27 +256,27 @@ overflow:scroll;
 	border-color:#FE7762;
 	font-weight:bold;
 	color:#FE7762;
-	padding:1px 6px 3px 6px;
-	margin:15px 0px 2px 0px;
+	padding:5px 6px 3px 6px;
+	margin:20px 0px 2px 0px;
 }
 .center{
 	font-size:17px;
 	background-color:#ffffff;
 	border-radius: 60px;
 	border-style:solid;
-	border-width:0.1px;
+	border-width:2px;
 	border-color:#1C4060;
 	color:#1C4060;
 	opacity:0.9;
 	padding:0px 15px 0px 15px;
-	margin-left:7px;
+	margin-left:9px;
 	font-weight:bold;
 }
 
 @media (min-width: 500px) {
-#foodlist{
-width:100%;
-}
+	#foodlist{
+	width:100%;
+	}
 	#cafelist{
 	width:100%;
 	}
@@ -293,13 +301,39 @@ width:100%;
 	height:100%
 	}
 	.food{
-	margin-left:-10%;
+ 	margin-left:-10%;
 	margin-right:10%;
 	}
 	.cafe{
 	margin-left:-10%;
+	margin-right:10%;
 	}
-	
+	.info{
+	font-size:15px;
+	background-color:#ffffff;
+	border-radius:10px;
+	border-style:solid;
+	border-width:2px;
+	border-color:#5EA4B8;
+	font-weight:bold;
+	color:#5EA4B8;
+	opacity:0.9;
+	padding:5px 6px 3px 6px;
+	margin:20px 0px 2px 0px;
+}
+.info-c{
+	font-size:15px;
+	background-color:#ffffff;
+	border-radius: 25px;
+	border-style:solid;
+	border-width:2px;
+	border-color:#FE7762;
+	font-weight:bold;
+	color:#FE7762;
+	padding:5px 6px 3px 6px;
+	margin:20px 0px 2px 0px;
+}	
+
 }
 
 
@@ -330,113 +364,101 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       	</div> 
 	  </div>
 	<div class="table">
-	 		<div class="icon">
-				<img src="./image/foodicon.svg" class="foodicon">음식점 LIST
-		</div>
+	  <div class="iconn">
+	 	<div class="icon"><img src="./image/foodicon.svg" class="foodicon">음식점<span class="list"> LIST</span></div>
+	 	<div class="icon2"><img src="./image/cafeicon.svg" class="cafeicon">카페/디저트 <span class="list">LIST</span></div> 
+	  </div>
+		
 		<div id="foodlist">
 		<ul>
-			<!-- <li class="foodpic" style="padding:0px; margin:0px;"><img src="./image/foodpic.svg" class="fimage"></li> -->
 			<li onclick="panTo(0)" class="foodlist"><a href="#" class="foodlist">국수나무 천왕점</a></li>
-			<li class="food"><a href="http://naver.me/GUL6tWvr" target="_blank" class="food2"><img src="./image/morefood.svg">더보기</a></li>
+			<li class="food"><a href="http://naver.me/GUL6tWvr" target="_blank" class="food2" id="food1"><img src="./image/morefood.svg">더보기</a></li>
 		</ul>
 		<ul>
-			<!-- <li class="foodpic"><img src="./image/foodpic.svg" class="fimage"></li> -->
 			<li onclick="panTo(1)" class="foodlist"><a href="#" class="foodlist">돈우네정육식당</a></li>
-			<li class="food"><a href="http://naver.me/IImsR8P3" target="_blank" class="food2"><img src="./image/morefood.svg">더보기</a></li>
+			<li class="food"><a href="http://naver.me/IImsR8P3" target="_blank" class="food2" id="food2"><img src="./image/morefood.svg">더보기</a></li>
 		</ul>
 		<ul>
-			<!-- <li  class="foodpic"><img src="./image/foodpic.svg" class="fimage"></li> -->
 			<li onclick="panTo(2)" class="foodlist"><a href="#" class="foodlist">롯데리아 천왕역점</a></li>
-			<li class="food"><a href="http://naver.me/GW5SJEZg" target="_blank" class="food2"><img src="./image/morefood.svg">더보기</a></li>
+			<li class="food"><a href="http://naver.me/GW5SJEZg" target="_blank" class="food2" id="food3"><img src="./image/morefood.svg">더보기</a></li>
 		</ul>
 		<ul>
-			<!-- <li  class="foodpic"><img src="./image/foodpic.svg" class="fimage"></li> -->			
 			<li onclick="panTo(3)" class="foodlist"><a href="#" class="foodlist">병천순대 </a></li>
-			<li class="food"><a href="http://naver.me/x9J5FRyB" target="_blank" class="food2"><img src="./image/morefood.svg">더보기</a></li>
+			<li class="food"><a href="http://naver.me/x9J5FRyB" target="_blank" class="food2" id="food4"><img src="./image/morefood.svg">더보기</a></li>
 		</ul>
 		<ul>
-			<!-- <li  class="foodpic"><img src="./image/foodpic.svg" class="fimage"></li> -->
 			<li onclick="panTo(4)" class="foodlist"><a href="#" class="foodlist">사생활</a></li>
-			<li class="food"><a href="http://naver.me/IgT0F6ew" target="_blank" class="food2"><img src="./image/morefood.svg">더보기</a></li>
+			<li class="food"><a href="http://naver.me/IgT0F6ew" target="_blank" class="food2" id="food5"><img src="./image/morefood.svg">더보기</a></li>
 		</ul>
 		<ul>
-			<!-- <li class="foodpic"><img src="./image/foodpic.svg" class="fimage"></li> -->
 			<li onclick="panTo(5)" class="foodlist"><a href="#" class="foodlist">시키스시</a></li>
-			<li class="food"><a href="http://naver.me/IDEldiOS" target="_blank" class="food2"><img src="./image/morefood.svg">더보기</a></li>
+			<li class="food"><a href="http://naver.me/IDEldiOS" target="_blank" class="food2" id="food6"><img src="./image/morefood.svg">더보기</a></li>
 		</ul>
 		<ul>
-			<!-- <li class="foodpic"><img src="./image/foodpic.svg" class="fimage"></li> -->
 			<li onclick="panTo(6)" class="foodlist"><a href="#" class="foodlist">식탐</a></li> 
-			<li class="food"><a href="http://naver.me/5PJ7urg5" target="_blank" class="food2"><img src="./image/morefood.svg">더보기</a></li>
+			<li class="food"><a href="http://naver.me/5PJ7urg5" target="_blank" class="food2" id="food7"><img src="./image/morefood.svg">더보기</a></li>
 		</ul>
 		<ul>
-			<!-- <li class="foodpic"><img src="./image/foodpic.svg" class="fimage"></li> -->
 			<li onclick="panTo(7)" class="foodlist"><a href="#" class="foodlist">카츠랑 천왕점</a></li>
-			<li class="food"><a href="http://naver.me/xWowKzhy" target="_blank" class="food2"><img src="./image/morefood.svg">더보기</a></li>
+			<li class="food"><a href="http://naver.me/xWowKzhy" target="_blank" class="food2" id="food8"><img src="./image/morefood.svg">더보기</a></li>
 		</ul>
 		<ul>
-			<!-- <li class="foodpic"><img src="./image/foodpic.svg" class="fimage"></li> -->
-			<li onclick="panTo(8)" class="foodlist"><a href="#" class="foodlist">핑거존 브런치카페</a></li>
-			<li class="food"><a href="http://naver.me/xAt4jXk2" target="_blank" class="food2"><img src="./image/morefood.svg">더보기</a></li>
+			<li onclick="panTo(8)" class="foodlist"><a href="#" class="foodlist">핑거존</a></li>
+			<li class="food"><a href="http://naver.me/xAt4jXk2" target="_blank" class="food2" id="food9"><img src="./image/morefood.svg">더보기</a></li>
 		</ul>
 		<ul>	
-			<!-- <li class="foodpic"><img src="./image/foodpic.svg" class="fimage"></li> -->
 			<li onclick="panTo(9)" class="foodlist"><a href="#" class="foodlist">해밀</a></li>
-			<li class="food"><a href="http://naver.me/FiW8GhLV" target="_blank" class="food2"><img src="./image/morefood.svg">더보기</a></li>
+			<li class="food"><a href="http://naver.me/FiW8GhLV" target="_blank" class="food2" id="food10"><img src="./image/morefood.svg">더보기</a></li>
 		</ul>
 		</div>
-
-
-	 <div class="icon2">
-		<img src="./image/cafeicon.svg" class="cafeicon">카페/디저트 LIST</div>
-	 
-	 <div id="cafelist">
-		<ul>	
-			<li onclick="panTo2(0)" class="cafelist"><a href="#" class="cafelist">12NOI </a></li>
-			<li class="cafe"><a href="http://naver.me/GaMW2Gr1" target="_blank" class="cafe2"><img src="./image/morecafe.svg">더보기</a></li>
-		</ul>
-		<ul>	
-			<li onclick="panTo2(1)" class="cafelist"><a href="#" class="cafelist">감성카페 천왕역환승센터점</a></li>
-			<li class="cafe"><a href="http://naver.me/FMAkFyVz" target="_blank" class="cafe2"><img src="./image/morecafe.svg">더보기</a></li>
-		</ul>
-		<ul>
-			<li onclick="panTo2(2)" class="cafelist"><a href="#" class="cafelist">달보드레</a></li>
-			<li class="cafe"><a href="http://naver.me/xuIhtPDY" target="_blank" class="cafe2"><img src="./image/morecafe.svg">더보기</a></li>
-		</ul>
-		<ul>
-			<li onclick="panTo2(3)" class="cafelist"><a href="#" class="cafelist">메이로드</a></li>
-			<li class="cafe"><a href="http://naver.me/xZx5bUWg" target="_blank" class="cafe2"><img src="./image/morecafe.svg">더보기</a></li>
-		</ul>
-		<ul>
-			<li onclick="panTo2(4)" class="cafelist"><a href="#" class="cafelist">빽다방 천왕역점</a></li>
-			<li class="cafe"><a href="http://naver.me/5ZRBYgBY" target="_blank" class="cafe2"><img src="./image/morecafe.svg">더보기</a></li>
-		</ul>
-		<ul>
-			<li onclick="panTo2(5)" class="cafelist"><a href="#" class="cafelist" class="cimage">사생활 브런치카페</a></li>
-			<li class="cafe"><a href="http://naver.me/IgT0F6ew" target="_blank" class="cafe2"><img src="./image/morecafe.svg">더보기</a></li>
-		</ul>
-		<ul>
-			<li onclick="panTo2(6)" class="cafelist"><a href="#" class="cafelist">좋은날</a></li>
-			<li class="cafe"><a href="http://naver.me/xGKLxJuR" target="_blank" class="cafe2"><img src="./image/morecafe.svg">더보기</a></li>
-		</ul>
-		<ul>
-			<li onclick="panTo2(7)" class="cafelist"><a href="#" class="cafelist">카페더빛</a></li>
-			<li class="cafe"><a href="http://naver.me/xuvNiRes" target="_blank" class="cafe2"><img src="./image/morecafe.svg">더보기</a></li>
-		</ul>		
-		<ul>
-			<li onclick="panTo2(8)" class="cafelist"><a href="#" class="cafelist">카페트렌디</a></li>
-			<li class="cafe"><a href="http://naver.me/5bXhMUSm" target="_blank" class="cafe2"><img src="./image/morecafe.svg">더보기</a></li>
-		</ul>
-		<ul>	
-			<li onclick="panTo2(9)" class="cafelist"><a href="#" class="cafelist">핑거존 브런치카페</a></li>
-			<li class="cafe"><a href="http://naver.me/xAt4jXk2" target="_blank" class="cafe2"><img src="./image/morecafe.svg">더보기</a></li>
-		</ul>
-	</div> 
-	</div>
-  
-	  
+	
+	<!--  	<div class="icon2"><img src="./image/cafeicon.svg" class="cafeicon">카페/디저트 <span class="list">LIST</span></div>  -->
+	 		<div id="cafelist">
+			<ul>	
+				<li onclick="panTo2(0)" class="cafelist"><a href="#" class="cafelist">12NOI </a></li>
+				<li class="cafe"><a href="http://naver.me/GaMW2Gr1" target="_blank" class="cafe2" id="cafe1"><img src="./image/morecafe.svg">더보기</a></li>
+			</ul>
+			<ul>	
+				<li onclick="panTo2(1)" class="cafelist"><a href="#" class="cafelist">감성카페 천왕역환승센터점</a></li>
+				<li class="cafe"><a href="http://naver.me/FMAkFyVz" target="_blank" class="cafe2" id="cafe2"><img src="./image/morecafe.svg">더보기</a></li>
+			</ul>
+			<ul>
+				<li onclick="panTo2(2)" class="cafelist"><a href="#" class="cafelist">달보드레</a></li>
+				<li class="cafe"><a href="http://naver.me/xuIhtPDY" target="_blank" class="cafe2" id="cafe3"><img src="./image/morecafe.svg">더보기</a></li>
+			</ul>
+			<ul>
+				<li onclick="panTo2(3)" class="cafelist"><a href="#" class="cafelist">메이로드</a></li>
+				<li class="cafe"><a href="http://naver.me/xZx5bUWg" target="_blank" class="cafe2" id="cafe4"><img src="./image/morecafe.svg">더보기</a></li>
+			</ul>
+			<ul>
+				<li onclick="panTo2(4)" class="cafelist"><a href="#" class="cafelist">빽다방 천왕역점</a></li>
+				<li class="cafe"><a href="http://naver.me/5ZRBYgBY" target="_blank" class="cafe2" id="cafe5"><img src="./image/morecafe.svg">더보기</a></li>
+			</ul>
+			<ul>
+				<li onclick="panTo2(5)" class="cafelist"><a href="#" class="cafelist" class="cimage">사생활 브런치카페</a></li>
+				<li class="cafe"><a href="http://naver.me/IgT0F6ew" target="_blank" class="cafe2" id="food5"><img src="./image/morecafe.svg">더보기</a></li>
+			</ul>
+			<ul>
+				<li onclick="panTo2(6)" class="cafelist"><a href="#" class="cafelist">좋은날</a></li>
+				<li class="cafe"><a href="http://naver.me/xGKLxJuR" target="_blank" class="cafe2"id="cafe7"><img src="./image/morecafe.svg">더보기</a></li>
+			</ul>
+			<ul>
+				<li onclick="panTo2(7)" class="cafelist"><a href="#" class="cafelist">카페더빛</a></li>
+				<li class="cafe"><a href="http://naver.me/xuvNiRes" target="_blank" class="cafe2" id="cafe8"><img src="./image/morecafe.svg">더보기</a></li>
+			</ul>		
+			<ul>
+				<li onclick="panTo2(8)" class="cafelist"><a href="#" class="cafelist">카페트렌디</a></li>
+				<li class="cafe"><a href="http://naver.me/5bXhMUSm" target="_blank" class="cafe2" id="cafe9"><img src="./image/morecafe.svg">더보기</a></li>
+			</ul>
+			<ul>	
+				<li onclick="panTo2(9)" class="cafelist"><a href="#" class="cafelist">핑거존</a></li>
+				<li class="cafe"><a href="http://naver.me/xAt4jXk2" target="_blank" class="cafe2" id="food9"><img src="./image/morecafe.svg">더보기</a></li>
+			</ul>
+		</div>
+ </div>
+ </div>
 	    	 
-</div>
+
 
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script type="text/javascript"src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e7f5bad1fe3f9b06240cea6d2cd9735d"></script>
@@ -519,7 +541,7 @@ new kakao.maps.LatLng(37.4811198515805, 126.839725683889), //핑거존브런치
 		content : '<div class="info">국수나무</div>',
 		latlng : new kakao.maps.LatLng(37.4812206902152, 126.839008321337)
 	},{
-	content : '<div class="info" style="margin-left:35px;magin-bottom:10px;">돈우네</div>',
+	content : '<div class="info">돈우네</div>',
 	latlng : new kakao.maps.LatLng(37.487582, 126.839170)
 }, {
 	content : '<div class="info">롯데리아</div>',
@@ -531,7 +553,7 @@ new kakao.maps.LatLng(37.4811198515805, 126.839725683889), //핑거존브런치
 	content : '<div class="info">사생활</div>',
 	latlng : new kakao.maps.LatLng(37.4912054930086, 126.842026722372)
 },{
-	content : '<div class="info" style="margin-right:30px;">시키스시</div>',
+	content : '<div class="info" style="margin-right:10px;">시키스시</div>',
 	latlng : new kakao.maps.LatLng(37.4875691857332, 126.838807227175)
 },{
 	content : '<div class="info">식탐</div>',
@@ -611,10 +633,10 @@ function createfoodMarkers() {
 let marker2 = new Array();
 let overlay = new Array();
 	for (let i = 0; i < foodPositions.length; i++) {
-		let imageSize = new kakao.maps.Size(50, 40),
+		let imageSize = new kakao.maps.Size(60, 50),
         imageOptions = {  
             spriteOrigin: new kakao.maps.Point(0, 0),    
-            spriteSize: new kakao.maps.Size(50,40)  
+            spriteSize: new kakao.maps.Size(60,50)  
         };     
 				
      // 마커이미지와 마커를 생성합니다
@@ -660,10 +682,10 @@ function createcafeMarkers() {
 	let marker2 = new Array();
 	for (let i = 0; i < cafePositions.length; i++) {
 		
-	     let imageSize = new kakao.maps.Size(50, 40),
+	     let imageSize = new kakao.maps.Size(60, 50),
             imageOptions = {  
                 spriteOrigin: new kakao.maps.Point(0, 0),    
-                spriteSize: new kakao.maps.Size(50, 40)  
+                spriteSize: new kakao.maps.Size(60, 50)  
             };     
         
         // 마커이미지와 마커를 생성합니다
@@ -707,7 +729,7 @@ function changeMarker(type) {
 	// 커피숍 카테고리가 클릭됐을 때
 	if (type === 'food') {
 		$("#foodMenu").attr("src","./image/foodlist2.svg");
-		$("#cafeMenu").attr("src","./image/cafelist.svg");
+	 	$("#cafeMenu").attr("src","./image/cafelist.svg"); 
 		
 		// 커피숍 마커들만 지도에 표시하도록 설정합니다
 		setfoodMarkers(map);
@@ -717,17 +739,18 @@ function changeMarker(type) {
 		document.getElementById("foodlist").style.display = "block";
 		document.getElementById("cafelist").style.display = "none";
 		$(".icon").show(); 
-		$(".icon2").hide(); 
+		$(".icon2").hide();
 		let moveLatLon = new kakao.maps.LatLng(37.485657, 126.839531);
 	    map.panTo(moveLatLon); 
-		/*  $('<li><img src="./image/foodpic.svg"></li>').insertBefore('.foodlist') */
+
 	    
 	    
 		
 	} else if (type === 'cafe') { // 편의점 카테고리가 클릭됐을 때
 		
-		$("#foodMenu").attr("src","./image/foodlist.svg");
-		$("#cafeMenu").attr("src","./image/cafelist2.svg");
+	 
+		$("#foodMenu").attr("src","./image/foodlist.svg");  
+ 		$("#cafeMenu").attr("src","./image/cafelist2.svg"); 
 
 		// 편의점 마커들만 지도에 표시하도록 설정합니다
 		setfoodMarkers(null);
@@ -736,7 +759,7 @@ function changeMarker(type) {
 		removefoodover(null);
 		document.getElementById("foodlist").style.display = "none";
 		document.getElementById("cafelist").style.display = "block";
-		$(".icon2").show();   
+	 	$(".icon2").show(); 
 		$(".icon").hide();   
 		let moveLatLon = new kakao.maps.LatLng(37.485657, 126.839531);
 		map.panTo(moveLatLon); 
